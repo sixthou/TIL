@@ -55,4 +55,20 @@
 ### request 스코프
 - `@Scope(vlaue = "request")`를 사용해서 지정.
 - HTTP 요청 당 하나씩 생성되고, HTTP 요청이 끝나는 시점에 소멸된다.
-- 
+- 실제 고객의 요청이 와야 생성되는 스코프이다.
+- Provider, 프록시를 사용해서 실행시점 오류를 해결한다.
+
+### 스코프와 프록시
+```java
+@Component
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class MyLogger {
+```
+- proxyMode = ScopedProxyMode.TARGET_CLASS를 추가한다.
+- 적용대상이 인터페이스명 `INTERFACES`
+- 적용대상이 클래스면 `TARGET_CLASS`
+- 가짜 프록시 클래스를 만들어두고, HTTP Request와 상관없이 가짜 프록시 클래스를 다른 빈에 미리 주입해 줄 수 있다.
+- **CGLIB** 라이브러리로 클래스를 상속받은 가짜 프록시 객체를 만들어 주입한다.
+- **가짜 프록시 객체는 요청이 오면 그때 내부에서 진짜 빈을 요청하는 위임로직을 수행한다.**
+- 가짜 프록시 객체는 원본 클래스를 상속 받아서 만들어졌기 때문에 이 객체를 사용하는 클라이언트는 원본인지 아닌지 모르며, 동일하게 사용한다.(다형성)
+- 객체 조회를 꼭 필요한 시점까지 지연 처리 할 수 잇다.
