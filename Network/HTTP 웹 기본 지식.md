@@ -32,7 +32,7 @@
 
 ## URL와 웹 브라우저 요청 흐름
 - URL
-- URL - Locator : 리소스가 있는 위치를 지덩
+- URL - Locator : 리소스가 있는 위치를 지정
   - 위치는 변할 수 있다.
 - URN - Name : 리소스에 이름을 부여
   - 이름은 변하지 않는다.
@@ -61,8 +61,8 @@ https://www.google.com:443/search?q=hello&hl=ko
   - ?로 시작, &로 추가가능 ?q=hello&hl=ko
   - query parameter, query string 등으로 불림, 웹서버에 제공하는 파라미터, 문자 형태
 - fragment
-  - htrml 내부 북마크 등에 사용
-  - 서버에 전송한느 정보 아님
+  - html 내부 북마크 등에 사용(페이지 중간으로 이동하는 시키는게 이에 해당)
+  - 서버에 전송하는 정보 아님
 
 ### 웹 브라우져 흐름
 1. 웹 프라우저가 http 메시지 생성
@@ -98,10 +98,10 @@ https://www.google.com:443/search?q=hello&hl=ko
     - 서버가 클라이언트 상태 보존 x
     - 장점 : 서버 확장성이 높음(스케일 아웃), 응답 서버를 바꿀 수 있다.
     - 단점 : 클라이언트가 추가 데이터 전송
-    - sateful 
+    - stateful 
       - 항상 같은 서버가 유지되어야 한다.
       - 중간에 서버에 장애가 나면 처음부터 다시해야됨.
-    - sateless
+    - stateless
       - 아무 서버나 호출해도 된다
       - 중간에 장애가 나면 다른 서버가 처리 가능하다
       - 스케일 아웃 가능
@@ -189,7 +189,7 @@ https://www.google.com:443/search?q=hello&hl=ko
     - 클라이언트가 서버에 요청할때 기대하는 행동
     - GET 
       - 리소스 조회
-      - 서버에 전달하고 싶은 데이터는 query를 통해서 전다
+      - 서버에 전달하고 싶은 데이터는 query를 통해서 전달
       - 메시지 바디를 사용해서 데이터를 전달할 수 있지만, 지원하지 않는 곳이 많아 쿼리파람 권장
     - POST
       - 요청 데이터 처리, 주로 등록에 사용
@@ -508,7 +508,7 @@ https://www.google.com:443/search?q=hello&hl=ko
     - 401 Unauthrized 응답과 함꼐 사용
 - 쿠키
   - Set-Cookie : 서버에서 클라이언트로 쿠키 전달(응답)
-  - Cookie : 클라이언트가 서버에서 받은 쿠리를 저장하고, HTTP 요청시 서버로 전달
+  - Cookie : 클라이언트가 서버에서 받은 쿠키를 저장하고, HTTP 요청시 서버로 전달
   - 쿠키를 왜?
     - HTTP 는 무상태(Stateless) 프로토콜이다.
     - 클라이언트와 서버가 요청과 응답을 주고 받으면 연결이 끊어진다.
@@ -525,9 +525,9 @@ https://www.google.com:443/search?q=hello&hl=ko
   - 쿠키 정보는 항상 서버에 전송됨
     - 네트워크 트래픽 추가 유발
     - 최소한 정보만 사용(세션 id, 인증 토큰)
-    - 서버에 전송하지 않고, 웹 브라우저 내부에 데이터를 저장하고 싶으면 웹 스토리지(localStorage, sessionStorage) ckarh
+    - 서버에 전송하지 않고, 웹 브라우저 내부에 데이터를 저장하고 싶으면 웹 스토리지(localStorage, sessionStorage)
   - 주의점
-    - 보안에 민감한 데이터는 젖아하면 안됨(주민번호, 신용카드 번호 등)
+    - 보안에 민감한 데이터는 저장하면 안됨(주민번호, 신용카드 번호 등)
   - 생명주기
     - Set-Cookie: expire=26-Dec-2020 00:00:00 GMT
       - 만료일이 되면 쿠키 삭제
