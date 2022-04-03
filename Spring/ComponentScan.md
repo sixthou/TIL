@@ -29,6 +29,7 @@
 <img width="410" alt="컴포넌트 스캔" src="https://user-images.githubusercontent.com/20774279/152462055-644223e4-4d7c-400f-b2fa-331f6845238b.png">
 2.`@Autowired`
 <img width="408" alt="의존관계 자동 주입" src="https://user-images.githubusercontent.com/20774279/152462062-0b5aa8b3-1956-46e5-be1b-e7b450d56f4f.png">
+
 ---
 ## 2. 탐색 위치와 기본 스캔 대상
 ```java
