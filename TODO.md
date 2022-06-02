@@ -1,0 +1,78 @@
+- 네트워크
+  - HTTP
+  - HTTPS 
+  - SSL
+  - TSL
+  - CORS  
+  - 브라우저에서 주소창에 url 입력시 어떤일이 일어나는가?
+  - OSI 7계층
+- 자바
+  - JAVA8 GC
+  - JAVA 메모리 구조
+    - HEAP Space, Permagen Space
+  - 클래스 변수 / 인스턴스 변수 / 로컬 변수
+  - 쓰레드 관점에서 stack 과 Heap 영역 차이
+  - NIO
+  - 자바8 특징
+    - 스트림
+      - 기존 루핑 방식과 차이점 
+    - 람다
+      - 람다란 무엇인가
+    - 디폴트 메서드
+    - 옵셔널
+  - HashMap 구현은 어떻게 
+  - 펑셔널 인터페이스
+    - 서플라이어, 컨슈머, 펑션, 피디디케이트
+  - LIST, SET, MAP
+  - 접근제어자(private, default, protected, public)
+  - call by value, call by reference
+  - overriding, overloading
+  - try with resources
+  - java9 jpms
+  - java native programming
+  - Checked Exception과 Unchecked Exception
+  - 서블릿 세션관리
+- JPA
+  - N+1
+- 스프링
+  - 스프링 Bean Scope
+  - Dispatcher servlet
+  - application Context
+  - bean factory
+  - 필터 
+  - 인터셉터
+  - SOLID
+  - Transactional
+  - isolation level
+  - propagation
+  - selfinvocation
+  - 프록시
+  - 스프링과 스프링 부트의 차이점
+  - spring cloud config
+  - API 보안 인증 요소
+- 운영체제
+  - 동기, 비동기
+  - block, none block
+  - 멀티쓰레드
+  - 프로세스 
+  - 쓰레드 
+  - 테스크
+- DB
+  - 인데스
+    - 인덱스 찾는 방식
+    - 인덱스는 쓰면 쓸수록 좋은가?
+  - 정규화와 역정규화
+  - ACID
+  - RDB와 NOSQL 의 차이점
+  - 언제 RDB를 쓰면 좋은가
+  - RDB에서 관계란
+- MSA
+  - MSA vs monolithic
+  - MSA에서의 트랜잭션 처리
+- 업무
+  - 업무적으로 경력 정리
+  - 이 회사의 이 팀에 지원한 이유
+  - 고객이 기술적으로 불가능한 요구를 했을 때 어떻게 대응 할 것인가?
+  - 주변 동료와의 트러블은?
+  - 평소에 했던 업무에서 비효율적이라고 생각했던 부분은?
+  - 평소에 스트레스는 어떻게 푸는가
